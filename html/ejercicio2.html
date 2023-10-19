@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo JS # 1</title>
+</head>
+<body>
+    <table border="1" id="imgTa"></table>
+
+    <script>
+        var data = [
+            {
+                foSrc: "../recursos/imagenes/arbolrs.jpg",
+                buttons: ["Hamburger Food", "Soucre Code", "Preview Demo"],
+            },
+            {
+                foSrc: "../recursos/imagenes/Balon.jpg",
+                buttons: ["Bat Ball", "Soucre Code", "Preview Demo"],
+            },
+            {
+                foSrc: "../recursos/imagenes/images.jpg",
+                buttons: ["Cuda Portfolio", "Soucre Code", "Preview Demo"],
+            },
+            {
+                foSrc: "../recursos/imagenes/luna.jpg",
+                buttons: ["Dream theme", "Soucre Code", "Preview Demo"],
+            },
+            {
+                foSrc: "../recursos/imagenes/mar.webp",
+                buttons: ["Facebook Login", "Soucre Code", "Preview Demo"],
+            },
+            {
+                foSrc: "../recursos/imagenes/naranja.jpg",
+                buttons: ["Frashion Ecommerce", "Soucre Code", "Preview Demo"],
+            },
+        ];
+        var ta = document.getElementById("imgTa");
+        for (var re = 0; re < 2; re++) {
+            var fi= document.createElement("tr");
+            for (var jor = 0; jor < 3; jor++) {
+                var cLda = document.createElement("td");
+                var inX = re * 3 + jor;
+                var it = data[inX];
+
+                var foZ1 = document.createElement("iMg");
+                foZ1.src = it.foSrc;
+                foZ1.width = "400";
+                foZ1.height = "300";
+                cLda.appendChild(foZ1);
+
+                var bo = document.createElement("div");
+                it.buttons.forEach(boTex => {
+                    var bo1 = document.createElement("button");
+                    bo1.textContent = boTex;
+                    bo.appendChild(bo1);
+                });
+                bo.style.display = "inline";
+                cLda.appendChild(bo);
+                fi.appendChild(cLda);
+            }
+            ta.appendChild(fi);
+        }
+    </script>
+</body>
+</html>
+
+
+
